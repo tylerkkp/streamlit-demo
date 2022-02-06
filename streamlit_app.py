@@ -20,11 +20,11 @@ import pandas as pd
 import numpy as np
 import altair as alt
 
-st.title('Graph Normal Distribution')
+st.title('Plot Normal Distribution (X and Y axis)')
 if 'points' not in st.session_state:
     st.session_state.points = 0
     
-points = st.slider('Samples', 1, 500)
+points = st.slider('Samples', 1, 10000)
 
 draw = st.button('Sample and Plot')
 if draw:
