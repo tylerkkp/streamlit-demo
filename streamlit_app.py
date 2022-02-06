@@ -1,26 +1,24 @@
 import streamlit as st
+import time
 
-# Python program to generate WordCloud
+st.set_page_config(layout="wide")
+st.title('Logging in Text Box')
 
-# importing all necessary modules
-from wordcloud import WordCloud, STOPWORDS
-import matplotlib.pyplot as plt
-import pandas as pd
+# creating a placeholder for the fixed sized textbox
+logtxtbox = st.empty()
+logtxt = 'start'
+logtxtbox.text_area("Logging: ",logtxt, height = 500)
 
-def word_cloud(text):
-  # Create and generate a word cloud image:
-  wordcloud = WordCloud(width = 800, height = 800,
-          background_color ='white',
-          stopwords = stopwords,
-          min_font_size = 10).generate(text)
+end_of_loop = False
+counter = 1
 
-  # Display the generated image:
-  plt.figure() 
-  plt.imshow(wordcloud, interpolation='bilinear')
-  plt.axis("off")
-  plt.show()
+while (end_of_loop==False):
 
-txt = st.text_area('Text:')
+    logtxt += 'Counter [' + str(counter) + '] \n'
+    logtxtbox.text_area("Logging: ", logtxt, height=500)
 
-if st.button('Create Word Cloud'):
-  st.write(word_cloud(txt))
+    counter += 1
+    if (counter > 100):
+        end_of_loop = True
+
+    time.sleep(0.2)
