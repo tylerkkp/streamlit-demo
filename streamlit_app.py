@@ -1,6 +1,7 @@
 import streamlit as st
 
-global counter = 0
+global counter
+count = 0
 def count():
   counter += 1
   
