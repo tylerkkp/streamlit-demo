@@ -1,8 +1,9 @@
 import streamlit as st
 
-hello = st.write('Hello World!')
+count = 0
+counter = st.write(count)
 
 def hello():
-  hello = 'test'
+  count += 1
   
 st.button('Click Me!', on_click=hello())
