@@ -45,7 +45,7 @@ data_url ='https://raw.githubusercontent.com/altair-viz/vega_datasets/master/veg
 df = pd.read_csv(data_url)
 
 
-airports= alt.Chart(df).mark_circle(size=5).encode(
+airports= alt.Chart(df).mark_circle(size=7).encode(
     longitude='longitude:Q',
     latitude='latitude:Q',
     color='state:N',
@@ -53,8 +53,8 @@ airports= alt.Chart(df).mark_circle(size=5).encode(
 ).project(
     type='albersUsa'
 ).properties(
-    width=1300,
-    height=800
+    width=1000,
+    height=600
 )
 
 st.altair_chart(airports)
