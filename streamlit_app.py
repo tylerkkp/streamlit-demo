@@ -43,17 +43,19 @@ st.title('Sample Geospatial Visualization - Airports in the US')
 data_url ='https://raw.githubusercontent.com/altair-viz/vega_datasets/master/vega_datasets/_data/airports.csv'
 
 df = pd.read_csv(data_url)
-print(df.head())
 
-alt.Chart(df).mark_circle(size=3).encode(
+
+airports= alt.Chart(df).mark_circle(size=3).encode(
     longitude='longitude:Q',
     latitude='latitude:Q',
     color='state:N',
-    tooltip='name:N'
+    tooltip=['iata:N', 'name:N', 'city:N', 'state:N']
 ).project(
     type='albersUsa'
 ).properties(
     width=650,
     height=400
 )
+
+st.altair_chart(airports)
                  
