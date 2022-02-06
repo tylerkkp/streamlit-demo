@@ -1,6 +1,8 @@
 import streamlit as st
 
+hello = st.write('Hello World!')
+
 def hello():
-  st.write('Hello World!')
+  hello = 'test'
   
 st.button('Click Me!', on_click=hello())
