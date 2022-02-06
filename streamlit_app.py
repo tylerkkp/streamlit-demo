@@ -31,8 +31,8 @@ if draw:
     st.session_state.points = points
     df = pd.DataFrame(np.random.normal(1, 100, size=(st.session_state.points, 2)), columns = ['x', 'y'])
 
-    c = alt.Chart(df).mark_circle().encode(
+    c = alt.Chart(df, width=400.0, height=400.0).mark_circle().encode(
          x='x', y='y', tooltip=['x', 'y'])
 
-    st.altair_chart(c)#, use_container_width=True)
+    st.altair_chart(c, use_container_width=True)
                  
