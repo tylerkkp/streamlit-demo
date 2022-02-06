@@ -53,8 +53,8 @@ airports= alt.Chart(df).mark_circle(size=5).encode(
 ).project(
     type='albersUsa'
 ).properties(
-    width=650,
-    height=400
+    width=1300,
+    height=800
 )
 
 st.altair_chart(airports)
