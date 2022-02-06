@@ -28,8 +28,8 @@ points = st.slider('Samples', 1, 500)
 
 draw = st.button('Sample and Plot')
 if draw:
-    xdata = pd.DataFrame(np.random.normal(1, 100, st.session.state.points))
-    ydata = pd.DataFrame(np.random.normal(1, 100, st.session.state.points))
+    xdata = pd.DataFrame(np.random.normal(1, 100, st.session_state.points))
+    ydata = pd.DataFrame(np.random.normal(1, 100, st.session_state.points))
     df = xdata.join(ydata)
     df.columns = ['x', 'y']
 
