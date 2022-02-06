@@ -45,10 +45,10 @@ data_url ='https://raw.githubusercontent.com/altair-viz/vega_datasets/master/veg
 df = pd.read_csv(data_url)
 
 alt.Chart(df).mark_circle(size=3).encode(
-    longitude='longitude:Q',
-    latitude='latitude:Q',
-    color='state:S',
-    tooltip='name:N\ncity:C'
+    longitude='longitude',
+    latitude='latitude',
+    color='state',
+    tooltip='name\ncity'
 ).project(
     type='albersUsa'
 ).properties(
