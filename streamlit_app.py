@@ -43,7 +43,15 @@ st.title('Sample Geospatial Visualization - Airports in the US')
 data_url ='https://raw.githubusercontent.com/altair-viz/vega_datasets/master/vega_datasets/_data/airports.csv'
 
 df = pd.read_csv(data_url)
+states = alt.topo_feature(data.us_10m.url, feature='states')
 
+map = alt.Chart(states).mark_geoshape(
+    fill='white',
+    stroke='darkgray'
+).properties(
+    width=1000,
+    height=600
+).project('albersUsa')
 
 airports= alt.Chart(df).mark_circle(size=7).encode(
     longitude='longitude:Q',
@@ -57,5 +65,7 @@ airports= alt.Chart(df).mark_circle(size=7).encode(
     height=600
 )
 
-st.altair_chart(airports)
+fullmap = map + airports
+
+st.altair_chart(fullmap)
                  
