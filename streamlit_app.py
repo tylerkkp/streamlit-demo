@@ -37,7 +37,7 @@ if draw:
     st.altair_chart(c, use_container_width=True)
 
     
-pip install vega_datasets
+!pip install vega_datasets
 from vega_datasets import data
 
 st.title('Sample Geospatial Visualization - Airports in the US')
