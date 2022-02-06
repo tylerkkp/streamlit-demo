@@ -35,8 +35,10 @@ if draw:
          x='x', y='y', tooltip=['x', 'y'])
 
     st.altair_chart(c, use_container_width=True)
-    
 
+    
+    
+from vega_datasets import data
 
 st.title('Sample Geospatial Visualization - Airports in the US')
 
