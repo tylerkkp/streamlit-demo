@@ -37,15 +37,14 @@ if draw:
     st.altair_chart(c, use_container_width=True)
     
 
-    
-from vega_datasets import data
 
 st.title('Sample Geospatial Visualization - Airports in the US')
 
-# Since the data is more than 5,000 rows we'll import it from a URL
-source = data.airports()
+data_url ='https://raw.githubusercontent.com/altair-viz/vega_datasets/master/vega_datasets/_data/airports.csv'
 
-alt.Chart(source).mark_circle(size=3).encode(
+df = pd.read_csv(data_url)
+
+alt.Chart(df).mark_circle(size=3).encode(
     longitude='longitude:Q',
     latitude='latitude:Q',
     color='state:S',
