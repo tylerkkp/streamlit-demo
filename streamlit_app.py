@@ -47,7 +47,6 @@ df = pd.read_csv(data_url)
 alt.Chart(df).mark_circle(size=3).encode(
     longitude='longitude:Q',
     latitude='latitude:Q',
-    color='state:N',
     tooltip='name:N'
 ).project(
     type='albersUsa'
