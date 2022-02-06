@@ -28,9 +28,7 @@ points = st.slider('Samples', 1, 500)
 
 draw = st.button('Sample and Plot')
 if draw:
-    xdata = pd.DataFrame(np.random.normal(1, 100, st.session_state.points), columns = 'x')
-    ydata = pd.DataFrame(np.random.normal(1, 100, st.session_state.points), columns = 'y')
-    df = xdata.join(ydata)
+    df = pd.DataFrame(np.random.normal(1, 100, st.session_state.points, size=(2,st.session_state.points), columns = ['x', 'y'])
 
     c = alt.Chart(df).mark_circle().encode(
          x='x', y='y', tooltip=['x', 'y'])
