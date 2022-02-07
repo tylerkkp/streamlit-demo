@@ -27,13 +27,14 @@ if 'points' not in st.session_state:
 points = st.slider('Samples', 1, 10000, help='''
     This does a thing. This is a test. 
     We expect all text in the tooltip to be the same.
-    1. This is a test
-    2. This is also a test
-    3. This **bold** should be smaller
-    - This normal text should render larger than expected
-    - This **bold** text should render normally
-    - *This *italic* text should render normally
-    - This ~strikethrough~ text should render normally
+    1. This is a test -normal
+    2. *This is a test* -italic
+    3. **This is a test** -bold
+    4. ~This is a test~ -strikethrough
+    - This is a test -normal
+    - *This is a test* -italic
+    - **This is a test** -bold
+    - ~This is a test~ -strikethrough
     ''')
 
 draw = st.button('Sample and Plot')
