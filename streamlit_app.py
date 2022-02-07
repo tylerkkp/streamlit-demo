@@ -34,6 +34,9 @@ points = st.slider('Samples', 1, 10000, help='''
     2. Yep, this too
     - This text should render larger than expected
     - **This text should render larger than expected**
+    - *This text should render larger than expected*
+    - _This text should render larger than expected_
+
     ''')
 
 draw = st.button('Sample and Plot')
