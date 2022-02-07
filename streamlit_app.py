@@ -25,8 +25,8 @@ if 'points' not in st.session_state:
     st.session_state.points = 0
     
 points = st.slider('Samples', 1, 10000, help='''
-    This does a thing. This is a test. 
-    We expect all text in the tooltip to be the same.
+    This is a test. See streamlit issue #4000 for more info.
+    We expect all text in this tooltip to be the same size.
     1. This is a test -normal
     2. *This is a test* -italic
     3. **This is a test** -bold
