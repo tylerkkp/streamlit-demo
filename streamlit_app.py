@@ -35,6 +35,11 @@ points = st.slider('Samples', 1, 10000, help='''
     - *This is a test* -italic
     - **This is a test** -bold
     - ~This is a test~ -strikethrough
+    ```python
+    print("Hello, world!")
+    for i in range(10):
+        print(i)
+    ```
     ''')
 
 draw = st.button('Sample and Plot')
