@@ -25,18 +25,15 @@ if 'points' not in st.session_state:
     st.session_state.points = 0
     
 points = st.slider('Samples', 1, 10000, help='''
-    Adjust this slider to and press the Sample and Plot button to generate x number of points.
-    These points are generated using a random normal distribution and have two components - x and y.
-    # This is a test
-    ## This is also a test
-    **This is further testing**
-    1. This is also
-    2. Yep, this too
-    - This text should render larger than expected
-    - **This text should render larger than expected**
-    - *This text should render larger than expected*
-    - _This text should render larger than expected_
-
+    This does a thing. This is a test. 
+    We expect all text in the tooltip to be the same.
+    1. This is a test
+    2. This is also a test
+    3. This **bold** should be smaller
+    - This normal text should render larger than expected
+    - This **bold** text should render normally
+    - *This *italic* text should render normally
+    - This ~strikethrough~ text should render normally
     ''')
 
 draw = st.button('Sample and Plot')
