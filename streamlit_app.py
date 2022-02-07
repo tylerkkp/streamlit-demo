@@ -24,7 +24,10 @@ st.title('Plot Normal Distribution (X and Y axis)')
 if 'points' not in st.session_state:
     st.session_state.points = 0
     
-points = st.slider('Samples', 1, 10000)
+points = st.slider('Samples', 1, 10000, help='''
+    Adjust this slider to and press the Sample and Plot button to generate x number of points.
+    These points are generated using a random normal distribution and have two components - x and y.
+    ''')
 
 draw = st.button('Sample and Plot')
 if draw:
