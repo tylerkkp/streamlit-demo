@@ -27,6 +27,8 @@ if 'points' not in st.session_state:
 points = st.slider('Samples', 1, 10000, help='''
     Adjust this slider to and press the Sample and Plot button to generate x number of points.
     These points are generated using a random normal distribution and have two components - x and y.
+    - This is a test
+    - This text should render larger than expected
     ''')
 
 draw = st.button('Sample and Plot')
